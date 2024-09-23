@@ -6,7 +6,7 @@ namespace GestionTareas_DataAccessLayer.Models
     {
         //Properties
         [Key]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage="{} es un campo requerido")]
         [StringLength(50, ErrorMessage ="{} no puede superar los 50 caracteres")]
@@ -20,7 +20,7 @@ namespace GestionTareas_DataAccessLayer.Models
         public DateTime FechaCreacion { get; set; }
 
         //Relationships
-        public long UsuarioId { get; set; }
+        public int UsuarioId { get; set; }
         public Usuario usuario { get; set; }
     }
 }

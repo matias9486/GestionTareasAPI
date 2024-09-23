@@ -6,9 +6,9 @@ namespace GestionTareas_DataAccessLayer.Interfaces
     public interface ITareasRepository : IRepository<Tarea>
     {
         Task<IEnumerable<Tarea>> GetAllTareasAsync();
-        Task<Tarea>FindByIdAsync(long id);
 
-        Task<bool> ExistsTareaId(long id);
-        
+        Task<IEnumerable<Tarea>> GetAllTareasByUserAsync(int userId);
+        Task<Tarea>GetTareaByIdWithUserAsync(int id);
+        Task<bool> ExistsTareaByUser(int tareaId, int userId);
     }
 }
