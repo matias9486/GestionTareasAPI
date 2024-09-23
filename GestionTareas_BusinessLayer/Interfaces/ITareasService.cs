@@ -7,18 +7,20 @@ namespace GestionTareas_BusinessLayer.Interfaces
     public interface ITareasService
     {
         Task<PaginationResponseDTO<TareaDTO>> GetAll(int pageNumber, int pageSize);
-        //Task<List<TareaDTO>> GetAll(int pageNumber, int pageSize);        
 
-        //Para no traer el objeto 
-        Task<bool> ExistsTareaId(long id);
+        Task<PaginationResponseDTO<TareaDTO>> GetAllByUserId(int pageNumber, int pageSize);
 
-        Task<TareaDTO> FindById(int id);
-        Task<bool> CreateTarea(Tarea tarea);
+        Task<TareaDTO> GetTareaById(int tareaId);
 
-        Task<bool> UpdateTarea(int id, UpdateTareaDTO tareaDTO);
+        //Para no traer el objeto         
+        Task<bool> ExistsTareaByUser(int tareaId, int userId);
+        
+        Task CreateTarea(AddTareaDTO tarea);
 
-        Task<bool> DeleteTarea(long id);
+        Task UpdateTarea(int id, UpdateTareaDTO tareaDTO);
 
-        Task<bool> FinalizeTarea(long id);
+        Task DeleteTarea(int id);
+
+        Task FinalizeTarea(int id);
     }
 }

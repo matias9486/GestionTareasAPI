@@ -34,7 +34,7 @@ namespace GestionTareas_BusinessLayer.Exceptions
             catch (Exception ex)
             {
                 // Maneja otras excepciones no específicas
-                await HandleExceptionAsync(context, HttpStatusCode.InternalServerError, "Ocurrió un error inesperado.");
+                await HandleExceptionAsync(context, HttpStatusCode.InternalServerError, "Ocurrió un error inesperado. " + ex.Message);
             }
         }
 
